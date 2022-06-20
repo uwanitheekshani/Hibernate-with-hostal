@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="dashBoardContext" prefHeight="725.0" prefWidth="1400.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostal.controller.DashBoardFormController">
+   <children>
+      <Pane prefHeight="725.0" prefWidth="190.0" style="-fx-background-color: #7f8c8d;">
+         <children>
+            <JFXButton layoutY="117.0" onAction="#btnRegistrationOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text=" REGISTRATION">
+               <font>
+                  <Font name="Bell MT Bold" size="19.0" />
+               </font>
+               <effect>
+                  <BoxBlur height="78.93" />
+               </effect>
+            </JFXButton>
+            <ImageView fitHeight="53.0" fitWidth="54.0" layoutX="68.0" layoutY="14.0" pickOnBounds="true">
+               <image>
+                  <Image url="@assests/photo_2022-06-18_23-36-39.jpg" />
+               </image>
+            </ImageView>
+            <Separator layoutX="11.0" layoutY="76.0" prefHeight="4.0" prefWidth="171.0" style="-fx-background-color: #2d3436;" />
+            <JFXButton layoutY="191.0" onAction="#btnRoomsOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text="ROOMS">
+               <font>
+                  <Font name="Bell MT Bold" size="19.0" />
+               </font>
+               <effect>
+                  <BoxBlur height="78.93" />
+               </effect>
+            </JFXButton>
+         </children>
+      </Pane>
+      <Pane layoutX="189.0" prefHeight="61.0" prefWidth="1213.0" style="-fx-background-color: #d1ccc0;">
+         <children>
+            <Label layoutX="35.0" layoutY="17.0" prefHeight="21.0" prefWidth="61.0" text="Date :" textFill="#2d3436">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="96.0" layoutY="23.0" text="2022-03-15" textFill="#2d3436">
+               <font>
+                  <Font name="Britannic Bold" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="974.0" layoutY="16.0" prefHeight="27.0" prefWidth="75.0" text="Time :" textFill="#2d3436">
+               <font>
+                  <Font name="Bell MT Bold" size="22.0" />
+               </font>
+            </Label>
+            <Label layoutX="533.0" layoutY="9.0" text="D24 HOSTEL" textFill="#2c2c54">
+               <font>
+                  <Font name="Bodoni MT" size="34.0" />
+               </font>
+            </Label>
+         </children>
+         <effect>
+            <Glow />
+         </effect>
+      </Pane>
+      <AnchorPane fx:id="mainContext" layoutX="189.0" layoutY="61.0" prefHeight="664.0" prefWidth="1213.0" style="-fx-background-color: #aaa69d;">
+         <effect>
+            <Glow level="0.0" />
+         </effect>
+      </AnchorPane>
+      <Label fx:id="lblTime" layoutX="1247.0" layoutY="19.0" prefHeight="26.0" prefWidth="146.0" text="22:34:40" textFill="#2d3436">
+         <font>
+            <Font name="Britannic Bold" size="17.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
