@@ -145,5 +145,15 @@
         </columns>
       </TableView>
       <JFXTextField fx:id="txtStatus" layoutX="61.0" layoutY="552.0" prefHeight="25.0" prefWidth="230.0" promptText="Status :" />
+      <JFXButton layoutX="339.0" layoutY="233.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Update">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="437.0" layoutY="233.0" onAction="#btnConfirmEditsOnAction" style="-fx-background-color: #636e72; -fx-text-fill: white; -fx-border-color: yellow;" text="Confirm Edits">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

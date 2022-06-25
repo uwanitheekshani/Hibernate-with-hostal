@@ -28,4 +28,10 @@ public class ReserveRoomFormController {
 
     public void btnAddReservationOnAction(ActionEvent actionEvent) {
     }
+
+    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    }
+
+    public void btnConfirmEditsOnAction(ActionEvent actionEvent) {
+    }
 }
