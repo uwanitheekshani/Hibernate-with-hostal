@@ -15,7 +15,7 @@
    <children>
       <Pane prefHeight="725.0" prefWidth="190.0" style="-fx-background-color: #7f8c8d;">
          <children>
-            <JFXButton layoutX="9.0" layoutY="118.0" onAction="#btnManageStudentsOnAction" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #f7f1e3;" text="Manage Students">
+            <JFXButton layoutY="117.0" onAction="#btnManageStudentsOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text="Manage Students">
                <font>
                   <Font name="Bell MT Bold" size="19.0" />
                </font>
@@ -29,7 +29,7 @@
                </image>
             </ImageView>
             <Separator layoutX="11.0" layoutY="76.0" prefHeight="4.0" prefWidth="171.0" style="-fx-background-color: #2d3436;" />
-            <JFXButton layoutX="11.0" layoutY="254.0" onAction="#btnManageRoomsOnAction" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #f7f1e3;" text="Manage Rooms">
+            <JFXButton layoutX="2.0" layoutY="253.0" onAction="#btnManageRoomsOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text="Manage Rooms">
                <font>
                   <Font name="Bell MT Bold" size="19.0" />
                </font>
@@ -37,7 +37,7 @@
                   <BoxBlur height="78.93" />
                </effect>
             </JFXButton>
-            <JFXButton layoutX="11.0" layoutY="389.0" onAction="#btnReserveRoomsOnAction" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #f7f1e3;" text="Reserve Rooms">
+            <JFXButton layoutX="2.0" layoutY="388.0" onAction="#btnReserveRoomsOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text="Reserve Rooms">
                <font>
                   <Font name="Bell MT Bold" size="19.0" />
                </font>
@@ -45,7 +45,7 @@
                   <BoxBlur height="78.93" />
                </effect>
             </JFXButton>
-            <JFXButton layoutX="11.0" layoutY="529.0" onAction="#btnReserveDetailsOnAction" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #f7f1e3;" text="Reserve Details">
+            <JFXButton layoutX="2.0" layoutY="528.0" onAction="#btnReserveDetailsOnAction" prefHeight="43.0" prefWidth="190.0" style="-fx-background-color: #f7f1e3;" text="Reserve Details">
                <font>
                   <Font name="Bell MT Bold" size="19.0" />
                </font>
