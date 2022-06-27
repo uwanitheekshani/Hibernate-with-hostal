@@ -1,5 +1,7 @@
 package lk.ijse.hostal.bo;
 
+import lk.ijse.hostal.bo.custom.impl.StudentBOImpl;
+
 public class BOFactory {
     private static BOFactory boFactory;
 
@@ -19,8 +21,8 @@ public class BOFactory {
 
     public SuperBO getBO(BOTypes types) {
         switch (types) {
-//            case CUSTOMER:
-//                return new CustomerBOImpl(); // SuperBO bo =new CustomerBOImpl();
+           case STUDENT:
+                return new StudentBOImpl(); // SuperBO bo =new CustomerBOImpl();
 //            case ITEM:
 //                return new ItemBOImpl(); // SuperBO bo = new ItemBOImpl();
 //            case PURCHASE_ORDER:
@@ -34,7 +36,7 @@ public class BOFactory {
 //            case ORDERDETAILS:
 //                return new OrderDetailBOImpl();
 //            case INCOME:
-//  1              return new IncomeBOImpl();
+//               return new IncomeBOImpl();
             default:
                 return null;
         }

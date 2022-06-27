@@ -28,7 +28,7 @@ public class Room {
     @Column(nullable = false)
     int qty;
 
-    @OneToMany(mappedBy = "Room")
-    @Cascade(CascadeType.ALL)
-    List<Student> studentList = new ArrayList<>();
+//    @OneToMany(mappedBy = "Room")
+//    @Cascade(CascadeType.ALL)
+//    List<Student> studentList = new ArrayList<>();
 }

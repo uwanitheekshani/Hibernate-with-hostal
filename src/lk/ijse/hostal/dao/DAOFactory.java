@@ -1,5 +1,7 @@
 package lk.ijse.hostal.dao;
 
+import lk.ijse.hostal.dao.custom.impl.StudentDAOImpl;
+
 public class DAOFactory {
     private static DAOFactory daoFactory;
 
@@ -16,14 +18,14 @@ public class DAOFactory {
 
     //public final static integer values
     public enum DAOTypes {
-        //CUSTOMER, ITEM, ORDER, ORDERDETAILS, QUERYDAO
+        STUDENT
     }
 
     //method for hide the object creation logic and return what client wants
     public SuperDAO getDAO(DAOTypes types) {
         switch (types) {
-//            case CUSTOMER:
-//                return new CustomerDAOImpl(); //SuperDAO superDAO=new CustomerDAOImpl();
+            case STUDENT:
+               return new StudentDAOImpl(); //SuperDAO superDAO=new CustomerDAOImpl();
 //            case ITEM:
 //                return new ItemDAOImpl(); //SuperDAO superDAO=new ItemDAOImpl();
 //            case ORDER:
