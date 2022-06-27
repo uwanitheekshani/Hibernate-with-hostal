@@ -2,27 +2,207 @@ package lk.ijse.hostal.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.hostal.bo.BOFactory;
+import lk.ijse.hostal.bo.custom.RoomBO;
+import lk.ijse.hostal.bo.custom.StudentBO;
+import lk.ijse.hostal.dto.RoomDTO;
+import lk.ijse.hostal.dto.StudentDTO;
+import lk.ijse.hostal.view.tdm.RoomTM;
+import lk.ijse.hostal.view.tdm.StudentTM;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.sql.SQLException;
+import java.util.List;
 
 public class RoomsFormController {
     public AnchorPane roomsContext;
     public JFXTextField txtRoomTypeId;
     public JFXTextField txtRoomsQty;
     public JFXTextField txtKeyMoney;
-    public Button btnSaveStudent;
-    public Button btnDeleteStudent;
-    public TableView tblRooms;
-    public JFXComboBox cmbRoomType;
+    public Button btnSaveRoom;
+    public Button btnDeleteRoom;
+    public TableView<RoomTM> tblRooms;
+    public JFXComboBox<String> cmbRoomType;
 
-    public void btnNewStudentOnAction(ActionEvent actionEvent) {
+    private final RoomBO roomBO = (RoomBO) BOFactory.getBoFactory().getBO(BOFactory.BOTypes.ROOM);
+
+    public void initialize() {
+        tblRooms.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("room_type_id"));
+        tblRooms.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("type"));
+        tblRooms.getColumns().get(2).setCellValueFactory(new PropertyValueFactory<>("key_money"));
+        tblRooms.getColumns().get(3).setCellValueFactory(new PropertyValueFactory<>("qty"));
+        
+
+        initUI();
+
+        ObservableList<String> obl = FXCollections.observableArrayList();
+
+        obl.add("Non-AC");
+        obl.add("Non-AC / Food");
+        obl.add("AC ");
+        obl.add("AC / Food");
+
+        cmbRoomType.setItems(obl);
+
+        tblRooms.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
+            btnDeleteRoom.setDisable(newValue == null);
+            btnSaveRoom.setText(newValue != null ? "Update" : "Save");
+            btnSaveRoom.setDisable(newValue == null);
+
+            if (newValue != null) {
+                txtRoomTypeId.setText(newValue.getRoom_type_id());
+                cmbRoomType.setValue(newValue.getType());
+                txtKeyMoney.setText(newValue.getKey_money().setScale(2).toString());
+                txtRoomsQty.setText(newValue.getQty() + "");
+
+
+                txtRoomTypeId.setDisable(false);
+                cmbRoomType.setDisable(false);
+                txtKeyMoney.setDisable(false);
+                txtRoomsQty.setDisable(false);
+
+            }
+        });
+
+
+        loadAllRooms();
     }
 
-    public void saveStudentOnAction(ActionEvent actionEvent) {
+    private void loadAllRooms() {
+        tblRooms.getItems().clear();
+
+        try {
+            List<RoomDTO> allRooms = roomBO.getAll();
+            for (RoomDTO room : allRooms) {
+                tblRooms.getItems().add(new RoomTM(room.getRoom_type_id(), room.getType(), room.getKey_money(), room.getQty()));
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void deleteStudentOnAction(ActionEvent actionEvent) {
+    private void initUI() {
+
+        txtRoomTypeId.clear();
+        cmbRoomType.getSelectionModel().clearSelection();
+        txtKeyMoney.clear();
+        txtRoomsQty.clear();
+        txtRoomTypeId.setDisable(true);
+        cmbRoomType.setDisable(true);
+        txtKeyMoney.setDisable(true);
+        txtRoomsQty.setDisable(true);
+        btnSaveRoom.setDisable(true);
+        btnDeleteRoom.setDisable(true);
+    }
+
+
+    public void btnNewRoomOnAction(ActionEvent actionEvent) {
+        txtRoomTypeId.setDisable(false);
+        cmbRoomType.setDisable(false);
+        txtKeyMoney.setDisable(false);
+        txtRoomsQty.setDisable(false);
+
+        txtRoomTypeId.clear();
+        cmbRoomType.getSelectionModel().clearSelection();
+        txtKeyMoney.clear();
+        txtRoomsQty.clear();
+
+        txtRoomTypeId.requestFocus();
+        btnSaveRoom.setDisable(false);
+        btnSaveRoom.setText("Save");
+        tblRooms.getSelectionModel().clearSelection();
+
+    }
+    public void saveRoomOnAction(ActionEvent actionEvent) {
+
+        String roomTypeId = txtRoomTypeId.getText();
+        String roomType = (String) cmbRoomType.getValue();
+        BigDecimal keyMoney = new BigDecimal(txtKeyMoney.getText()).setScale(2);
+        int roomsQty = Integer.parseInt(txtRoomsQty.getText());
+
+
+
+//        if (!name.matches("^[A-Z ][a-z]{1,}$")) {
+//            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
+//            txtCustomerName.requestFocus();
+//            return;
+//        } else if (!address.matches(".{3,}")) {
+//            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
+//            txtCustomerAddress.requestFocus();
+//            return;
+//        }else if (!city.matches("^[A-Z ][a-z]{1,}$")) {
+//            new Alert(Alert.AlertType.ERROR, "Invalid city").show();
+//            txtCity.requestFocus();
+//            return;
+//        }else if (!province.matches("^[A-Z ][a-z]{1,}$")) {
+//            new Alert(Alert.AlertType.ERROR, "Invalid province").show();
+//            txtProvince.requestFocus();
+//            return;
+//        }else if (!postalCode.matches("^[A-z0-9 ,/]{4,20}$")) {
+//            new Alert(Alert.AlertType.ERROR, "Invalid postal code").show();
+//            txtPostalCode.requestFocus();
+//            return;
+//        }
+        try {
+            if (btnSaveRoom.getText().equalsIgnoreCase("save")) {
+
+                if (roomBO.saveRoom(new RoomDTO(roomTypeId, roomType, keyMoney, roomsQty))) {
+                    tblRooms.getItems().add(new RoomTM(roomTypeId, roomType, keyMoney, roomsQty));
+                    initUI();
+
+                    new Alert(Alert.AlertType.CONFIRMATION, "Saved!").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Failed!").show();
+                }
+
+
+            } else {
+
+                roomBO.updateRoom(new RoomDTO(roomTypeId, roomType, keyMoney, roomsQty));
+
+                RoomTM selectedRoom = tblRooms.getSelectionModel().getSelectedItem();
+                selectedRoom.setRoom_type_id(roomTypeId);
+                selectedRoom.setType(roomType);
+                selectedRoom.setKey_money(keyMoney);
+                selectedRoom.setQty(roomsQty);
+                tblRooms.refresh();
+                new Alert(Alert.AlertType.CONFIRMATION, "Updated!").show();
+                initUI();
+
+            }
+        }catch(Exception e){
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
+
+    }
+
+    public void deleteRoomOnAction(ActionEvent actionEvent) {
+
+        String id = tblRooms.getSelectionModel().getSelectedItem().getRoom_type_id();
+        try {
+            roomBO.deleteRoom(id);
+            tblRooms.getItems().remove(tblRooms.getSelectionModel().getSelectedItem());
+            tblRooms.getSelectionModel().clearSelection();
+            initUI();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+        }
     }
 }

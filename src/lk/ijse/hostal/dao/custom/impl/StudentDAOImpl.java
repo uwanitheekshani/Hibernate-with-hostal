@@ -54,8 +54,8 @@ public class StudentDAOImpl implements StudentDAO {
     public List search(String s) throws SQLException, ClassNotFoundException, IOException {
         Session session = FactoryConfiguration.getInstance().getSession();
 
-       // String hql = "FROM Student WHERE student_Id = :student_Id";
-        Query query = session.createQuery("FROM student WHERE student_id = :student_Id");
+        String hql = "FROM student WHERE student_id = :student_Id";
+        Query query = session.createQuery(hql);
         query.setParameter("student_Id", s);
         List list = query.getResultList();
         return list;

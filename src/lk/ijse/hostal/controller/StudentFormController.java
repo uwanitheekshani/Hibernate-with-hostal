@@ -82,7 +82,7 @@ public class StudentFormController {
 
     private void loadAllStudents() {
         tblStudent.getItems().clear();
-        /*Get all customers*/
+
         try {
             List<StudentDTO> allStudents = studentBO.getAll();
             for (StudentDTO student : allStudents) {

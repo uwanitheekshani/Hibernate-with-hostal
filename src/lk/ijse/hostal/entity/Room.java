@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +25,7 @@ public class Room {
     @Column(nullable = false)
     String type;
     @Column(nullable = false)
-    String key_money;
+    BigDecimal key_money;
     @Column(nullable = false)
     int qty;
 

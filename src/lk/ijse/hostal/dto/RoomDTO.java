@@ -9,6 +9,7 @@ import org.hibernate.annotations.CascadeType;
 
 import javax.persistence.Column;
 import javax.persistence.OneToMany;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 @Data
@@ -17,6 +18,6 @@ import java.util.List;
 public class RoomDTO {
     String room_type_id;
     String type;
-    String key_money;
+    BigDecimal key_money;
     int qty;
 }

@@ -11,7 +11,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="roomsContext" prefHeight="664.0" prefWidth="1213.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostal.controller.RoomsFormController">
    <children>
       <Label layoutX="444.0" layoutY="14.0" text="Manage Rooms" textFill="#403939">
@@ -29,7 +28,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="831.0" layoutY="125.0" onAction="#btnNewStudentOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #4fb5b2;" text="+ New Student">
+      <JFXButton layoutX="831.0" layoutY="125.0" onAction="#btnNewRoomOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #4fb5b2;" text="+ New Room">
          <font>
             <Font name="Bookman Old Style Bold" size="18.0" />
          </font>
@@ -42,12 +41,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="btnSaveStudent" layoutX="678.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveStudentOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #00b894;" text="Save ">
+      <Button fx:id="btnSaveRoom" layoutX="678.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveRoomOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #00b894;" text="Save ">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteStudent" layoutX="809.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteStudentOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #f39c12;" text="Delete">
+      <Button fx:id="btnDeleteRoom" layoutX="809.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteRoomOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #f39c12;" text="Delete">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

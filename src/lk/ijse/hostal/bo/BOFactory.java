@@ -1,6 +1,8 @@
 package lk.ijse.hostal.bo;
 
+import lk.ijse.hostal.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hostal.bo.custom.impl.StudentBOImpl;
+import lk.ijse.hostal.dao.custom.impl.RoomDAOImpl;
 
 public class BOFactory {
     private static BOFactory boFactory;
@@ -16,15 +18,15 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENT
+        STUDENT,ROOM
     }
 
     public SuperBO getBO(BOTypes types) {
         switch (types) {
            case STUDENT:
-                return new StudentBOImpl(); // SuperBO bo =new CustomerBOImpl();
-//            case ITEM:
-//                return new ItemBOImpl(); // SuperBO bo = new ItemBOImpl();
+                return new StudentBOImpl();
+            case ROOM:
+                return new RoomBOImpl();
 //            case PURCHASE_ORDER:
 //                return new PurchaseOrderBOImpl(); //SuperBO bo = new PurchaseOrderBOImpl();
 //            case MOSTMOVABLEITEM:
