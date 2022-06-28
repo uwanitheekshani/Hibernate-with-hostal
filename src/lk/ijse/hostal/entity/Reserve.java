@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -15,7 +16,7 @@ public class Reserve {
 
     @Id
     String res_id;
-    Date date;
+    LocalDate date;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "student_id",referencedColumnName = "student_id")
     private Student student;

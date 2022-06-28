@@ -29,7 +29,14 @@ public class Room {
     @Column(nullable = false)
     int qty;
 
-//    @OneToMany(mappedBy = "Room")
-//    @Cascade(CascadeType.ALL)
-//    List<Student> studentList = new ArrayList<>();
+    @OneToMany(mappedBy = "room")
+    @Cascade(CascadeType.ALL)
+    List<Reserve> roomList;
+
+    public Room(String room_type_id, String type, BigDecimal key_money, int qty) {
+        this.room_type_id = room_type_id;
+        this.type = type;
+        this.key_money = key_money;
+        this.qty = qty;
+    }
 }

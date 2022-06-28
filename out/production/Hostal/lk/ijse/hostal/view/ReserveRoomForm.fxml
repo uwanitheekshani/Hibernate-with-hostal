@@ -150,10 +150,5 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="437.0" layoutY="233.0" onAction="#btnConfirmEditsOnAction" style="-fx-background-color: #636e72; -fx-text-fill: white; -fx-border-color: yellow;" text="Confirm Edits">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXButton>
    </children>
 </AnchorPane>
