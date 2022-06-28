@@ -8,10 +8,10 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
-@Data
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Data
 public class Reserve {
 
     @Id
@@ -25,5 +25,6 @@ public class Reserve {
     @JoinColumn(name = "room_type_id",referencedColumnName = "room_type_id")
     private Room room;
     String status;
+    private int res_qty;
 
 }

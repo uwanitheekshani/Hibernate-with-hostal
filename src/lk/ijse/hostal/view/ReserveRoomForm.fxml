@@ -22,12 +22,12 @@
             <Font name="System Bold" size="32.0" />
          </font>
       </Label>
-      <Label layoutX="160.0" layoutY="61.0" text="Rooms Availability" textFill="#051246">
+      <Label layoutX="67.0" layoutY="53.0" text="Rooms Availability" textFill="#051246">
          <font>
-            <Font size="23.0" />
+            <Font size="20.0" />
          </font>
       </Label>
-      <Pane layoutX="160.0" layoutY="111.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
+      <Pane layoutX="160.0" layoutY="88.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
          <effect>
             <Glow level="1.0" />
          </effect>
@@ -48,7 +48,7 @@
                </font>
             </Label>
          </children></Pane>
-      <Pane layoutX="393.0" layoutY="111.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
+      <Pane layoutX="393.0" layoutY="88.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
          <effect>
             <Glow level="1.0" />
          </effect>
@@ -70,7 +70,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="629.0" layoutY="111.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
+      <Pane layoutX="629.0" layoutY="88.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
          <effect>
             <Glow level="1.0" />
          </effect>
@@ -92,7 +92,7 @@
             </Label>
          </children>
       </Pane>
-      <Pane layoutX="866.0" layoutY="111.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
+      <Pane layoutX="866.0" layoutY="88.0" prefHeight="92.0" prefWidth="187.0" style="-fx-background-color: #2d3436;">
          <effect>
             <Glow level="1.0" />
          </effect>
@@ -114,16 +114,16 @@
             </Label>
          </children>
       </Pane>
-      <Label layoutX="55.0" layoutY="225.0" text="Res ID :" textFill="#051246">
+      <Label layoutX="55.0" layoutY="203.0" text="Res ID :" textFill="#051246">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbStudentId" layoutX="59.0" layoutY="265.0" prefHeight="25.0" prefWidth="230.0" promptText="Student ID :" />
-      <JFXTextField fx:id="txtStudentName" layoutX="61.0" layoutY="318.0" prefHeight="25.0" prefWidth="230.0" promptText="Student Name :" />
-      <JFXComboBox fx:id="cmbRoomTypeId" layoutX="59.0" layoutY="375.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type ID :" />
-      <JFXTextField fx:id="txtRoomType" layoutX="61.0" layoutY="434.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type :" />
-      <JFXTextField fx:id="txtKeyMoney" layoutX="61.0" layoutY="499.0" prefHeight="25.0" prefWidth="230.0" promptText="Key Money :" />
+      <JFXComboBox fx:id="cmbStudentId" layoutX="59.0" layoutY="243.0" prefHeight="25.0" prefWidth="230.0" promptText="Student ID :" />
+      <JFXTextField fx:id="txtStudentName" layoutX="61.0" layoutY="296.0" prefHeight="25.0" prefWidth="230.0" promptText="Student Name :" />
+      <JFXComboBox fx:id="cmbRoomTypeId" layoutX="59.0" layoutY="353.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type ID :" />
+      <JFXTextField fx:id="txtRoomType" layoutX="61.0" layoutY="409.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type :" />
+      <JFXTextField fx:id="txtKeyMoney" layoutX="61.0" layoutY="466.0" prefHeight="25.0" prefWidth="230.0" promptText="Key Money :" />
       <JFXButton layoutX="61.0" layoutY="609.0" onAction="#btnDeleteOnAction" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Delete">
          <font>
             <Font size="16.0" />
@@ -134,22 +134,23 @@
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblReserveRoomsOnAction" layoutX="339.0" layoutY="291.0" prefHeight="286.0" prefWidth="768.0">
+      <TableView fx:id="tblReserveRoomsOnAction" layoutX="339.0" layoutY="291.0" prefHeight="286.0" prefWidth="799.0">
         <columns>
           <TableColumn prefWidth="138.0" text="Res_ID" />
-          <TableColumn prefWidth="152.0" text="Date" />
-            <TableColumn prefWidth="172.0" text="Student ID" />
-            <TableColumn prefWidth="153.0" text="Room Type ID" />
-            <TableColumn prefWidth="152.0" text="Status" />
+          <TableColumn prefWidth="146.0" text="Date" />
+            <TableColumn prefWidth="151.0" text="Student ID" />
+            <TableColumn prefWidth="132.0" text="Room Type ID" />
+            <TableColumn prefWidth="131.0" text="Status" />
+            <TableColumn prefWidth="100.0" text="Room Qty" />
         </columns>
       </TableView>
-      <JFXTextField fx:id="txtStatus" layoutX="61.0" layoutY="552.0" prefHeight="25.0" prefWidth="230.0" promptText="Status :" />
+      <JFXTextField fx:id="txtStatus" layoutX="61.0" layoutY="563.0" prefHeight="25.0" prefWidth="230.0" promptText="Status :" />
       <JFXButton layoutX="339.0" layoutY="233.0" onAction="#btnUpdateOnAction" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Update">
          <font>
             <Font size="16.0" />
          </font>
       </JFXButton>
-      <JFXTextField fx:id="txtResId" layoutX="128.0" layoutY="226.0" prefHeight="25.0" prefWidth="157.0" />
+      <JFXTextField fx:id="txtResId" layoutX="128.0" layoutY="204.0" prefHeight="25.0" prefWidth="157.0" />
       <TextField fx:id="txtSearchByOrderIdCustomerId" layoutX="534.0" layoutY="239.0" onKeyReleased="#searchOrderIdOnKeyReleased" prefHeight="27.0" prefWidth="224.0" promptText="search by Res Id" style="-fx-border-color: green;" />
       <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="501.0" layoutY="243.0" pickOnBounds="true">
          <image>
@@ -157,5 +158,6 @@
          </image>
       </ImageView>
       <Separator layoutX="527.0" layoutY="240.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="4.0" />
+      <JFXTextField fx:id="txtRoomQty" layoutX="61.0" layoutY="515.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Qty :" />
    </children>
 </AnchorPane>
