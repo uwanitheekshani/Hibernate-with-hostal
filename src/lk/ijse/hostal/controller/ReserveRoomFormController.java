@@ -22,6 +22,7 @@ public class ReserveRoomFormController {
     public JFXTextField txtKeyMoney;
     public TableView tblReserveRoomsOnAction;
     public JFXTextField txtStatus;
+    public JFXTextField txtResId;
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
     }

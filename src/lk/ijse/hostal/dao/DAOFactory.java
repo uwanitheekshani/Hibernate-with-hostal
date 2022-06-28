@@ -19,7 +19,7 @@ public class DAOFactory {
 
     //public final static integer values
     public enum DAOTypes {
-        STUDENT,ROOM
+        STUDENT,ROOM,RESERVE
     }
 
     //method for hide the object creation logic and return what client wants
