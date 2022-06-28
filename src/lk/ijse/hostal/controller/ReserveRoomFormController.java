@@ -32,6 +32,4 @@ public class ReserveRoomFormController {
     public void btnUpdateOnAction(ActionEvent actionEvent) {
     }
 
-    public void btnConfirmEditsOnAction(ActionEvent actionEvent) {
-    }
 }
