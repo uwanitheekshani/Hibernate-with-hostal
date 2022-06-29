@@ -13,7 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class ReserveTM {
      String res_Id;
-     LocalDate date;
+     String date;
      String student_id;
      String room_type_id;
      String status;

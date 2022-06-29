@@ -41,7 +41,7 @@ public class ReserveBOImpl implements ReserveBO {
 
     @Override
     public List<ReserveDTO> searchReserve(String enteredText) throws SQLException, ClassNotFoundException, IOException {
-        List<Reserve> reserves = reserveDAO.search(enteredText);
+        List<Reserve> reserves = reserveDAO.searchReserve(enteredText);
         List<ReserveDTO> reserveDTOS = new ArrayList<>();
         for (Reserve rs : reserves){
             reserveDTOS.add(new ReserveDTO(rs.getRes_id(), rs.getDate(), rs.getStudent(), rs.getRoom(), rs.getStatus(), rs.getRes_qty()));
@@ -87,5 +87,22 @@ public class ReserveBOImpl implements ReserveBO {
             allDTO.add(new RoomDTO(r.getRoom_type_id(),r.getType(),r.getKey_money(),r.getQty()));
         }
         return allDTO;
+    }
+
+    @Override
+    public boolean deleteReservation(String id) throws SQLException, ClassNotFoundException, IOException {
+        return reserveDAO.delete(id);
+    }
+
+    @Override
+    public boolean UpdateReservation(ReserveDTO dto) throws SQLException, ClassNotFoundException, IOException {
+        return reserveDAO.update(new Reserve(
+                dto.getRes_id(),
+                dto.getDate(),
+                dto.getStudent_id(),
+                dto.getRoom_type_id(),
+                dto.getStatus(),
+                dto.getRes_qty()
+        ));
     }
 }

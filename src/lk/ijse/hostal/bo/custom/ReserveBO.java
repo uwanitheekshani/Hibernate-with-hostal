@@ -18,4 +18,7 @@ public interface ReserveBO extends SuperBO {
     List<RoomDTO> searchRoom (String id) throws ClassNotFoundException, IOException, Exception;
     List<StudentDTO> getAllStudent() throws SQLException,ClassNotFoundException, Exception;
     List<RoomDTO> getAllRoom() throws SQLException,ClassNotFoundException, Exception;
+    boolean deleteReservation(String  id) throws SQLException, ClassNotFoundException, IOException;
+    boolean UpdateReservation(ReserveDTO dto) throws SQLException, ClassNotFoundException, IOException;
+
 }
