@@ -230,7 +230,6 @@ public class ReserveRoomFormController {
 
 
     public void btnReservedOnAction(ActionEvent actionEvent) throws SQLException, IOException, ClassNotFoundException {
-        System.out.println(btnReserved.getText());
         Student s1 = new Student();
         s1.setStudent_id(cmbStudentId.getValue());
 
@@ -244,10 +243,9 @@ public class ReserveRoomFormController {
             cmbRoomTypeId.setValue(null);
             txtRoomQty.clear();
             txtStatus.clear();
-            //loadAllReservation();
+
         }else if (btnReserved.getText().equals("Update")){
             btnReserved.setText("Reserved");
-            System.out.println("update");
             reserveBO.UpdateReservation(new ReserveDTO(txtResId.getText(), LocalDate.now(), s1, r1, txtStatus.getText(), Integer.parseInt(txtRoomQty.getText())));
         }
         loadAllReservation();
