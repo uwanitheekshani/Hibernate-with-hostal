@@ -53,6 +53,14 @@
                   <BoxBlur height="78.93" />
                </effect>
             </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="652.0" onAction="#btnManageUserOnAction" prefHeight="43.0" prefWidth="171.0" style="-fx-background-color: #f7f1e3;" text="Manage User">
+               <font>
+                  <Font name="Bell MT Bold" size="19.0" />
+               </font>
+               <effect>
+                  <BoxBlur height="78.93" />
+               </effect>
+            </JFXButton>
          </children>
       </Pane>
       <Pane layoutX="189.0" prefHeight="61.0" prefWidth="1213.0" style="-fx-background-color: #d1ccc0;">
@@ -87,7 +95,7 @@
             <Glow />
          </effect>
       </Pane>
-      <AnchorPane fx:id="mainContext" layoutX="189.0" layoutY="61.0" prefHeight="664.0" prefWidth="1213.0" style="-fx-background-color: #aaa69d;">
+      <AnchorPane fx:id="mainContext" layoutX="189.0" layoutY="61.0" prefHeight="664.0" prefWidth="1213.0" style="-fx-background-color: white;">
          <effect>
             <Glow level="0.0" />
          </effect>

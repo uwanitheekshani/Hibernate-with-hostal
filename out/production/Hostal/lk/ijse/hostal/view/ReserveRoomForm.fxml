@@ -58,11 +58,6 @@
       <JFXComboBox fx:id="cmbRoomTypeId" layoutX="59.0" layoutY="353.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type ID :" />
       <JFXTextField fx:id="txtRoomType" layoutX="61.0" layoutY="409.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Type :" />
       <JFXTextField fx:id="txtKeyMoney" layoutX="61.0" layoutY="466.0" prefHeight="25.0" prefWidth="230.0" promptText="Key Money :" />
-      <JFXButton fx:id="btnAdd" layoutX="339.0" layoutY="165.0" onAction="#btnAddOnAction" prefHeight="39.0" prefWidth="93.0" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Add">
-         <font>
-            <Font size="16.0" />
-         </font>
-      </JFXButton>
       <JFXButton fx:id="btnReserved" layoutX="114.0" layoutY="611.0" onAction="#btnReservedOnAction" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text=" Reserved">
          <font>
             <Font size="16.0" />

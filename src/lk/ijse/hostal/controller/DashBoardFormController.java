@@ -82,4 +82,10 @@ public class DashBoardFormController {
         Parent parent = FXMLLoader.load(getClass().getResource("../view/ReserveRoomForm.fxml"));
         mainContext.getChildren().add(parent);
     }
+
+    public void btnManageUserOnAction(ActionEvent actionEvent) throws IOException {
+        mainContext.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("../view/UserForm.fxml"));
+        mainContext.getChildren().add(parent);
+    }
 }

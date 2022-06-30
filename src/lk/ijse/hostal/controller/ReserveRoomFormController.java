@@ -101,7 +101,7 @@ public class ReserveRoomFormController {
             e.printStackTrace();
         }
 
-//        lblDate.setText(LocalDate.now().toString());
+       lblDate.setText(LocalDate.now().toString());
 //        btnReserved.setDisable(true);
 //        txtResId.setFocusTraversable(false);
 //        .setEditable(false);
