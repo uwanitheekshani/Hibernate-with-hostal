@@ -3,6 +3,7 @@ package lk.ijse.hostal.dao;
 import lk.ijse.hostal.dao.custom.impl.ReserveDAOImpl;
 import lk.ijse.hostal.dao.custom.impl.RoomDAOImpl;
 import lk.ijse.hostal.dao.custom.impl.StudentDAOImpl;
+import lk.ijse.hostal.dao.custom.impl.UserDAOImpl;
 
 public class DAOFactory {
     private static DAOFactory daoFactory;
@@ -10,7 +11,7 @@ public class DAOFactory {
     private DAOFactory() {
     }
 
-    //singleton
+
     public static DAOFactory getDaoFactory() {
         if (daoFactory == null) {
             daoFactory = new DAOFactory();
@@ -18,12 +19,12 @@ public class DAOFactory {
         return daoFactory;
     }
 
-    //public final static integer values
+
     public enum DAOTypes {
-        STUDENT,ROOM,RESERVE
+        STUDENT,ROOM,RESERVE,USER
     }
 
-    //method for hide the object creation logic and return what client wants
+
     public SuperDAO getDAO(DAOTypes types) {
         switch (types) {
             case STUDENT:
@@ -32,8 +33,8 @@ public class DAOFactory {
                 return new RoomDAOImpl();
             case RESERVE:
                 return new ReserveDAOImpl();
-//            case ORDERDETAILS:
-//                return new OrderDetailsDAOImpl(); //SuperDAO superDAO = new OrderDetailsDAOImpl();
+            case USER:
+                return new UserDAOImpl();
 //            case QUERYDAO:
 //                return new QueryDAOImpl(); //SuperDAO superDAO = new QueryDAOImpl();
             default:

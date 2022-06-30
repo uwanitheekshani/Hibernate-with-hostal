@@ -3,6 +3,7 @@ package lk.ijse.hostal.bo;
 import lk.ijse.hostal.bo.custom.impl.ReserveBOImpl;
 import lk.ijse.hostal.bo.custom.impl.RoomBOImpl;
 import lk.ijse.hostal.bo.custom.impl.StudentBOImpl;
+import lk.ijse.hostal.bo.custom.impl.UserBOImpl;
 import lk.ijse.hostal.dao.custom.impl.RoomDAOImpl;
 
 public class BOFactory {
@@ -19,7 +20,7 @@ public class BOFactory {
     }
 
     public enum BOTypes {
-        STUDENT,ROOM,RESERVE
+        STUDENT,ROOM,RESERVE,USER
     }
 
     public SuperBO getBO(BOTypes types) {
@@ -30,8 +31,8 @@ public class BOFactory {
                 return new RoomBOImpl();
             case RESERVE:
                 return new ReserveBOImpl();
-//            case MOSTMOVABLEITEM:
-//                return new MostMovableBOImpl();
+            case USER:
+                return new UserBOImpl();
 //            case LEASTMOVABLEITEM:
 //                return new LeastMovableBOImpl();
 //            case ORDER:

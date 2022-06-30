@@ -177,6 +177,21 @@ public class ReserveRoomFormController {
                 txtRoomQty.setText(String.valueOf(newValue.getRes_qty()));
             }
         });
+        reservationId = generateNewReservationId();
+        txtResId.setText( reservationId);
+    }
+
+    private String generateNewReservationId() {
+        try {
+            return reserveBO.generateReservationId();
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, "Failed to generate a new Reserve Id").show();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "RES-001";
     }
 
     private void loadAllReservation() throws SQLException, IOException, ClassNotFoundException {
@@ -249,6 +264,8 @@ public class ReserveRoomFormController {
             reserveBO.UpdateReservation(new ReserveDTO(txtResId.getText(), LocalDate.now(), s1, r1, txtStatus.getText(), Integer.parseInt(txtRoomQty.getText())));
         }
         loadAllReservation();
+        reservationId = generateNewReservationId();
+        txtResId.setText( reservationId);
     }
 
 

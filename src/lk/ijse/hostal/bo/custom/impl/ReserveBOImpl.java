@@ -105,4 +105,9 @@ public class ReserveBOImpl implements ReserveBO {
                 dto.getRes_qty()
         ));
     }
+
+    @Override
+    public String generateReservationId() throws Exception {
+        return reserveDAO.generateReservationId();
+    }
 }
