@@ -135,27 +135,19 @@ public class RoomsFormController {
 
 
 
-//        if (!name.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
-//            txtCustomerName.requestFocus();
-//            return;
-//        } else if (!address.matches(".{3,}")) {
-//            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
-//            txtCustomerAddress.requestFocus();
-//            return;
-//        }else if (!city.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid city").show();
-//            txtCity.requestFocus();
-//            return;
-//        }else if (!province.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid province").show();
-//            txtProvince.requestFocus();
-//            return;
-//        }else if (!postalCode.matches("^[A-z0-9 ,/]{4,20}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid postal code").show();
-//            txtPostalCode.requestFocus();
-//            return;
-//        }
+        if (!roomTypeId.matches("^(RM-)[0-9]{2,4}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Id").show();
+            txtRoomTypeId.requestFocus();
+            return;
+        } else if (!txtKeyMoney.getText().matches("^[0-9]+[.]?[0-9]*$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid KeyMoney").show();
+            txtKeyMoney.requestFocus();
+            return;
+        }else if (!txtRoomsQty.getText().matches("^\\d+$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Qty").show();
+            txtRoomsQty.requestFocus();
+            return;
+        }
         try {
             if (btnSaveRoom.getText().equalsIgnoreCase("save")) {
 

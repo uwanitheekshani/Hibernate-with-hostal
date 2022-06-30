@@ -102,20 +102,6 @@ public class ReserveRoomFormController {
         }
 
        lblDate.setText(LocalDate.now().toString());
-//        btnReserved.setDisable(true);
-//        txtResId.setFocusTraversable(false);
-//        .setEditable(false);
-//        txtDescription.setFocusTraversable(false);
-//        txtDescription.setEditable(false);
-//        txtUnitPrice.setFocusTraversable(false);
-//        txtUnitPrice.setEditable(false);
-//        txtQtyOnHand.setFocusTraversable(false);
-//        txtQtyOnHand.setEditable(false);
-//        txtDiscount.setFocusTraversable(false);
-//        txtDiscount.setEditable(false);
-//        txtQty.setOnAction(event -> btnAddOrder.fire());
-//        txtQty.setEditable(false);
-//        btnAddOrder.setDisable(true);
 
         cmbStudentId.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
 
@@ -258,6 +244,17 @@ public class ReserveRoomFormController {
 
         Room r1 = new Room();
         r1.setRoom_type_id(cmbRoomTypeId.getValue());
+
+        if (!txtRoomQty.getText().matches("^\\d+$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Qty").show();
+            txtRoomQty.requestFocus();
+            return;
+        } else if (!txtStatus.getText().matches(".{3,}")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Status").show();
+            txtKeyMoney.requestFocus();
+            return;
+        }
+
 
         if (!btnReserved.getText().equals("Update")){
             reserveBO.save(new ReserveDTO(txtResId.getText(), LocalDate.now(), s1, r1, txtStatus.getText(), Integer.parseInt(txtRoomQty.getText())));

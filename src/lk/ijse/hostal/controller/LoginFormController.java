@@ -37,12 +37,12 @@ public class LoginFormController {
         String password=txtPassword.getText();
 
         User user=userBO.searchUser(id);
-        // UserLogin password2=userBO.searchUser(password);
+
 
         if (user!=null) {
             if (txtPassword.getText().equals(user.getPassword()) || pwdPassword.getText().equals(user.getPassword())) {
                 setUi("DashBoardForm");
-                //new Alert(Alert.AlertType.CONFIRMATION, "").show();
+
             } else {
                 new Alert(Alert.AlertType.ERROR, "Incorrect Password..!").show();
             }

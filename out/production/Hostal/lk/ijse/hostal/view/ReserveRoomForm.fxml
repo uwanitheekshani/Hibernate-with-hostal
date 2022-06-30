@@ -17,7 +17,7 @@
 
 <AnchorPane fx:id="reserveRoomsContext" prefHeight="664.0" prefWidth="1213.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostal.controller.ReserveRoomFormController">
    <children>
-      <Label layoutX="492.0" layoutY="14.0" text="Reserve Rooms" textFill="#403939">
+      <Label layoutX="500.0" layoutY="15.0" text="Reserve Rooms" textFill="#403939">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -89,5 +89,10 @@
             <Font size="17.0" />
          </font>
       </Label>
+      <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="421.0" layoutY="9.0" pickOnBounds="true">
+         <image>
+            <Image url="@assests/photo_2022-06-30_23-16-37.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

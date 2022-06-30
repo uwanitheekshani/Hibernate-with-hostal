@@ -195,6 +195,7 @@ public class StudentFormController {
                 tblStudent.refresh();
                 new Alert(Alert.AlertType.CONFIRMATION, "Updated!").show();
                 initUI();
+                //btnSaveStudent.setDisable(false);
 
             }
         }catch(Exception e){
@@ -209,7 +210,7 @@ public class StudentFormController {
             studentBO.deleteStudent(id);
             tblStudent.getItems().remove(tblStudent.getSelectionModel().getSelectedItem());
             tblStudent.getSelectionModel().clearSelection();
-            initUI();
+           // initUI();
         } catch (SQLException e) {
         e.printStackTrace();
         } catch (ClassNotFoundException e) {

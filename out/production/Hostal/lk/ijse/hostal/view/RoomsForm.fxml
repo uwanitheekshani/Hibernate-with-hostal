@@ -8,6 +8,8 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -28,7 +30,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="831.0" layoutY="125.0" onAction="#btnNewRoomOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #4fb5b2;" text="+ New Room">
+      <JFXButton layoutX="831.0" layoutY="125.0" onAction="#btnNewRoomOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #2d3436; -fx-text-fill: white;" text="+ New Room">
          <font>
             <Font name="Bookman Old Style Bold" size="18.0" />
          </font>
@@ -41,12 +43,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="btnSaveRoom" layoutX="678.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveRoomOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #00b894;" text="Save ">
+      <Button fx:id="btnSaveRoom" layoutX="678.0" layoutY="225.0" mnemonicParsing="false" onAction="#saveRoomOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: #f1c40f;" text="Save ">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteRoom" layoutX="809.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteRoomOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #f39c12;" text="Delete">
+      <Button fx:id="btnDeleteRoom" layoutX="809.0" layoutY="225.0" mnemonicParsing="false" onAction="#deleteRoomOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: #f1c40f;" text="Delete">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -60,5 +62,10 @@
          </columns>
       </TableView>
       <JFXComboBox fx:id="cmbRoomType" labelFloat="true" layoutX="412.0" layoutY="122.0" prefHeight="31.0" prefWidth="223.0" promptText="Room Type" style="-fx-font-size: 20;" unFocusColor="#1e1010" />
+      <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="344.0" layoutY="9.0" pickOnBounds="true">
+         <image>
+            <Image url="@assests/photo_2022-06-30_23-16-40.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

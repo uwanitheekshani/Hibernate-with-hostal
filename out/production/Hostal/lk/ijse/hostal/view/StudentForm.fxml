@@ -8,12 +8,14 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="manageStudentContext" prefHeight="664.0" prefWidth="1213.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.hostal.controller.StudentFormController">
    <children>
-      <Label layoutX="373.0" layoutY="15.0" text="Manage Students" textFill="#403939">
+      <Label layoutX="460.0" layoutY="19.0" text="Manage Students" textFill="#403939">
          <font>
             <Font name="System Bold" size="32.0" />
          </font>
@@ -33,7 +35,7 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <JFXButton layoutX="776.0" layoutY="115.0" onAction="#btnNewStudentOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #4fb5b2;" text="+ New Student">
+      <JFXButton layoutX="776.0" layoutY="115.0" onAction="#btnNewStudentOnAction" prefHeight="37.0" prefWidth="283.0" style="-fx-background-color: #2d3436; -fx-text-fill: white;" text="+ New Student">
          <font>
             <Font name="Bookman Old Style Bold" size="18.0" />
          </font>
@@ -46,12 +48,12 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <Button fx:id="btnSaveStudent" layoutX="626.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveStudentOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #00b894;" text="Save ">
+      <Button fx:id="btnSaveStudent" layoutX="626.0" layoutY="309.0" mnemonicParsing="false" onAction="#saveStudentOnAction" prefHeight="21.0" prefWidth="96.0" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Save ">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
       </Button>
-      <Button fx:id="btnDeleteStudent" layoutX="784.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteStudentOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #f39c12;" text="Delete">
+      <Button fx:id="btnDeleteStudent" layoutX="784.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteStudentOnAction" prefHeight="37.0" prefWidth="96.0" style="-fx-background-color: #2d3436; -fx-text-fill: white; -fx-border-color: yellow;" text="Delete">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -72,5 +74,10 @@
             <TableColumn prefWidth="123.0" text="Gender" />
          </columns>
       </TableView>
+      <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="379.0" layoutY="14.0" pickOnBounds="true">
+         <image>
+            <Image url="@assests/photo_2022-06-30_23-16-43.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
