@@ -175,6 +175,14 @@ public class ReserveRoomFormController {
                 cmbRoomTypeId.setValue(newValue.getRoom_type_id());
                 txtStatus.setText(newValue.getStatus());
                 txtRoomQty.setText(String.valueOf(newValue.getRes_qty()));
+            }else {
+                cmbStudentId.getSelectionModel().clearSelection();
+                cmbRoomTypeId.getSelectionModel().clearSelection();
+                txtRoomQty.clear();
+                txtStudentName.clear();
+                txtStatus.clear();
+                txtRoomType.clear();
+                txtKeyMoney.clear();
             }
         });
         reservationId = generateNewReservationId();

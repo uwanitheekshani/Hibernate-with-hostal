@@ -147,27 +147,27 @@ public class StudentFormController {
         String gender = (String) cmbGender.getValue();
 
 
-//        if (!name.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid name").show();
-//            txtCustomerName.requestFocus();
-//            return;
-//        } else if (!address.matches(".{3,}")) {
-//            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
-//            txtCustomerAddress.requestFocus();
-//            return;
-//        }else if (!city.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid city").show();
-//            txtCity.requestFocus();
-//            return;
-//        }else if (!province.matches("^[A-Z ][a-z]{1,}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid province").show();
-//            txtProvince.requestFocus();
-//            return;
-//        }else if (!postalCode.matches("^[A-z0-9 ,/]{4,20}$")) {
-//            new Alert(Alert.AlertType.ERROR, "Invalid postal code").show();
-//            txtPostalCode.requestFocus();
-//            return;
-//        }
+        if (!studentId.matches("^(S00-)[0-9]{3,5}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Student Id").show();
+            txtStudentName.requestFocus();
+            return;
+        } else if (!studentName.matches("^([A-Z][a-z]*((\\s)))+[A-Z][a-z]*$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Student Name").show();
+            txtStudentName.requestFocus();
+            return;
+        } else if (!studentAddress.matches(".{3,}")) {
+            new Alert(Alert.AlertType.ERROR, "Address should be at least 3 characters long").show();
+            txtStudentAddress.requestFocus();
+            return;
+        }else if (!contactNo.matches("^07(7|6|8|1|2|5|0|4)-[0-9]{7}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Contact Number").show();
+            txtContactNo.requestFocus();
+            return;
+        }else if (!dob.matches("^\\d{4}-\\d{2}-\\d{2}$")) {
+            new Alert(Alert.AlertType.ERROR, "Invalid Date Of Birth").show();
+            txtDateOfBirth.requestFocus();
+            return;
+        }
         try {
             if (btnSaveStudent.getText().equalsIgnoreCase("save")) {
 

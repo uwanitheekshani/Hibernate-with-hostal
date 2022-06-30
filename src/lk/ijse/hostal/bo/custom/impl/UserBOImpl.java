@@ -44,4 +44,9 @@ public class UserBOImpl implements UserBO {
         }
         return allDTO;
     }
+
+    @Override
+    public User searchUser(String id) throws IOException, SQLException, ClassNotFoundException {
+        return userDAO.searchUser(id);
+    }
 }

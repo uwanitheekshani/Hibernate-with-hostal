@@ -21,5 +21,6 @@ public interface ReserveBO extends SuperBO {
     boolean deleteReservation(String  id) throws SQLException, ClassNotFoundException, IOException;
     boolean UpdateReservation(ReserveDTO dto) throws SQLException, ClassNotFoundException, IOException;
     String generateReservationId() throws Exception;
+     List<ReserveDTO> remainKeyMoneyStudents() throws Exception;
 
 }

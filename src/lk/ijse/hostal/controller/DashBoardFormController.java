@@ -12,6 +12,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import lk.ijse.hostal.entity.Room;
+import lk.ijse.hostal.entity.Student;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -63,7 +65,10 @@ public class DashBoardFormController {
         mainContext.getChildren().add(parent);
     }
 
-    public void btnReserveDetailsOnAction(ActionEvent actionEvent) {
+    public void btnReserveDetailsOnAction(ActionEvent actionEvent) throws IOException {
+        mainContext.getChildren().clear();
+        Parent parent = FXMLLoader.load(getClass().getResource("../view/ReserveDetailsForm.fxml"));
+        mainContext.getChildren().add(parent);
     }
 
 

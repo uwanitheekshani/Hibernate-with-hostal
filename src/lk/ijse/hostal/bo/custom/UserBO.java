@@ -3,6 +3,7 @@ package lk.ijse.hostal.bo.custom;
 import lk.ijse.hostal.bo.SuperBO;
 import lk.ijse.hostal.dto.StudentDTO;
 import lk.ijse.hostal.dto.UserDTO;
+import lk.ijse.hostal.entity.User;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -17,4 +18,7 @@ public interface UserBO extends SuperBO {
     boolean deleteUser(String id) throws SQLException, ClassNotFoundException, IOException;
 
     List<UserDTO> getAll() throws SQLException, ClassNotFoundException, IOException;
+
+    User searchUser(String id) throws IOException, SQLException, ClassNotFoundException;
+
 }

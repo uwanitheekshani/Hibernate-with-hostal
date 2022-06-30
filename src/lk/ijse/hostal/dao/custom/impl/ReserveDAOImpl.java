@@ -100,4 +100,18 @@ public class ReserveDAOImpl implements ReserveDAO {
 
 
     }
+
+    @Override
+    public List<Reserve> remainKeyMoneyStudents() throws Exception {
+        Session session = FactoryConfiguration.getInstance().getSession();
+        Transaction transaction = session.beginTransaction();
+
+        String hql = "FROM Reserve WHERE status LIKE '%is payable'";
+        List<Reserve> remainKeyMoneyStudentsList = session.createQuery(hql).list();
+
+        transaction.commit();
+        session.close();
+        return remainKeyMoneyStudentsList;
+    }
+
 }

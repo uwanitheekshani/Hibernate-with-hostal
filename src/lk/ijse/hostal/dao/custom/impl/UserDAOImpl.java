@@ -73,4 +73,14 @@ public class UserDAOImpl implements UserDAO {
 
         return userList;
     }
+
+    @Override
+    public User searchUser(String id) throws SQLException, ClassNotFoundException, IOException {
+        Session session = FactoryConfiguration.getInstance().getSession();
+
+        User user = session.find(User.class, id);
+
+        session.close();
+        return user;
+    }
 }

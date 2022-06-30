@@ -11,4 +11,5 @@ import java.util.List;
 public interface ReserveDAO extends CrudDAO<Reserve,String> {
     List<Reserve> searchReserve(String enteredText) throws SQLException, ClassNotFoundException, IOException;
     String generateReservationId() throws Exception;
+    List<Reserve> remainKeyMoneyStudents() throws Exception;
 }
