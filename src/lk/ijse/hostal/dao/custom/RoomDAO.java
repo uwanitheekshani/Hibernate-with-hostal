@@ -9,5 +9,4 @@ import java.util.ArrayList;
 public interface RoomDAO extends CrudDAO<Room,String> {
    // public ArrayList<Room> searchRooms(String enteredText) throws SQLException, ClassNotFoundException;
 
-
 }

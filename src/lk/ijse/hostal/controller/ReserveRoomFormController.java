@@ -132,7 +132,7 @@ public class ReserveRoomFormController {
                         txtRoomType.setText(dto.getType());
                         txtKeyMoney.setText(dto.getKey_money().setScale(2).toString());
                         Optional<ReserveTM> optOrderDetail = tblReserveRooms.getItems().stream().filter(detail -> detail.getRoom_type_id().equals(newValue)).findFirst();
-                        lblRoomCount.setText((optOrderDetail.isPresent() ? dto.getQty() - optOrderDetail.get().getRes_qty() : dto.getQty()) + "");
+                        lblRoomCount.setText(String.valueOf(dto.getQty()-test(dto.getRoom_type_id())));
 
                     }
                 } catch (Exception e) {
@@ -173,6 +173,19 @@ public class ReserveRoomFormController {
         });
         reservationId = generateNewReservationId();
         txtResId.setText( reservationId);
+
+    }
+
+    private int test(String m) throws Exception {
+        int r=0;
+        ObservableList<ReserveTM> ob=tblReserveRooms.getItems();
+        for (ReserveTM tm:ob
+             ) {
+            if (tm.getRoom_type_id().equals(m)){
+               r+=tm.getRes_qty();
+            }
+        }
+        return r;
     }
 
     private String generateNewReservationId() {
@@ -245,6 +258,9 @@ public class ReserveRoomFormController {
         Room r1 = new Room();
         r1.setRoom_type_id(cmbRoomTypeId.getValue());
 
+        int m=Integer.parseInt(txtRoomQty.getText());
+
+
         if (!txtRoomQty.getText().matches("^\\d+$")) {
             new Alert(Alert.AlertType.ERROR, "Invalid Qty").show();
             txtRoomQty.requestFocus();
@@ -271,6 +287,8 @@ public class ReserveRoomFormController {
         loadAllReservation();
         reservationId = generateNewReservationId();
         txtResId.setText( reservationId);
+
+        lblRoomCount.setText(String.valueOf(Integer.valueOf(lblRoomCount.getText())-m));
     }
 
 
