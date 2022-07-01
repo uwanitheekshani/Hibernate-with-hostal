@@ -27,22 +27,22 @@
             <Font size="16.0" />
          </font>
       </Label>
-      <Pane layoutX="68.0" layoutY="73.0" prefHeight="80.0" prefWidth="243.0" style="-fx-background-color: #2d3436;">
+      <Pane layoutX="68.0" layoutY="73.0" prefHeight="80.0" prefWidth="271.0" style="-fx-background-color: #2d3436;">
          <effect>
             <Glow level="1.0" />
          </effect>
          <children>
-            <Label fx:id="lblRoomId" layoutX="14.0" layoutY="15.0" opacity="0.7" style="-fx-text-fill: white;" text="Room ID">
+            <Label fx:id="lblRoomId" layoutX="35.0" layoutY="15.0" opacity="0.7" style="-fx-text-fill: white;" text="Room ID">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblRoomType" layoutX="151.0" layoutY="15.0" opacity="0.7" style="-fx-text-fill: white;" text="Room Type">
+            <Label fx:id="lblRoomType" layoutX="140.0" layoutY="15.0" opacity="0.7" style="-fx-text-fill: white;" text="Room Type">
                <font>
                   <Font size="15.0" />
                </font>
             </Label>
-            <Label fx:id="lblRoomCount" layoutX="80.0" layoutY="40.0" opacity="0.7" style="-fx-text-fill: white;" text="Room Count">
+            <Label fx:id="lblRoomCount" layoutX="94.0" layoutY="40.0" opacity="0.7" style="-fx-text-fill: white;" text="Room Count">
                <font>
                   <Font size="15.0" />
                </font>
@@ -77,21 +77,21 @@
       <JFXTextField fx:id="txtStatus" layoutX="61.0" layoutY="563.0" prefHeight="25.0" prefWidth="230.0" promptText="Status :" />
       <JFXTextField fx:id="txtResId" layoutX="128.0" layoutY="204.0" prefHeight="25.0" prefWidth="157.0" />
       <TextField fx:id="txtSearchByResId" layoutX="608.0" layoutY="172.0" onKeyReleased="#searchResIdOnKeyReleased" prefHeight="27.0" prefWidth="412.0" promptText="search by Res Id" style="-fx-border-color: green;" />
-      <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="575.0" layoutY="176.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../../../../../Assignment/src/view/assests/search.png" />
-         </image>
-      </ImageView>
       <Separator layoutX="598.0" layoutY="174.0" orientation="VERTICAL" prefHeight="25.0" prefWidth="5.0" />
       <JFXTextField fx:id="txtRoomQty" layoutX="61.0" layoutY="515.0" prefHeight="25.0" prefWidth="230.0" promptText="Room Qty :" />
-      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="960.0" layoutY="25.0" prefHeight="24.0" prefWidth="152.0" text="2021-10-11">
+      <Label fx:id="lblDate" alignment="CENTER_RIGHT" layoutX="960.0" layoutY="62.0" prefHeight="24.0" prefWidth="152.0" text="2021-10-11">
          <font>
-            <Font size="17.0" />
+            <Font name="Britannic Bold" size="21.0" />
          </font>
       </Label>
       <ImageView fitHeight="58.0" fitWidth="68.0" layoutX="421.0" layoutY="9.0" pickOnBounds="true">
          <image>
             <Image url="@assests/photo_2022-06-30_23-16-37.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="24.0" fitWidth="22.0" layoutX="571.0" layoutY="174.0" pickOnBounds="true">
+         <image>
+            <Image url="@assests/loupe.png" />
          </image>
       </ImageView>
    </children>
